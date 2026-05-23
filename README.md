@@ -2,6 +2,13 @@
 
 PGP-Chat encrypts chat messages with pgp.
 
+## Usage
+
+You must have gpg installed on your system and in your PATH.
+When chatting prefix a message with enc: to send an
+encrypted message.
+You must have at least 1 recipient specified.
+
 ## Config
 
 The config is available in your instances config folder at PGP-Chat/config.txt
@@ -19,6 +26,7 @@ encrypted message to you must have you entered in his config.
 ## Dependencies
 
 Fabric API
+GPG (System)
 
 ## License
 
