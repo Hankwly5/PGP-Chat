@@ -26,7 +26,7 @@ encrypted message to you must have you entered in his config.
 ## Dependencies
 
 Fabric API
-GPG (System)
+GPG (System)  
 
 ## License
 
