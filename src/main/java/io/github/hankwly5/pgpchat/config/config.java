@@ -14,7 +14,7 @@ public class config {
 
         Files.createDirectories(config.getParent());
         if (!Files.exists(config)) {
-            Files.writeString(config, "# The fingerprint, email, or key id of your message's recipient's pgp key (must be in gpg keyring), you can add more recipient: lines to add more recipients\nrecipient: ");
+            Files.writeString(config, "# The fingerprint, email, or key id of your message's recipient's pgp key (must be in gpg keyring), you can add more recipient: lines to add more recipients\nrecipient: \n# The path to gpg, find this out by running which gpg in a terminal and putting the result here, if the mod works without doing this then there is no reason to do this\ngpg-path: ");
         }
 
         List<String> values = new ArrayList<>();
