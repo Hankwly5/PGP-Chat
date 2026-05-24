@@ -26,7 +26,7 @@ public class Decryption {
         sb.insert(index, '\n');
     }
     try {
-        Process process = Runtime.getRuntime().exec(new String[]{"gpg", "--no-tty", "--decrypt"});
+        Process process = Runtime.getRuntime().exec(new String[]{"/usr/bin/gpg", "--no-tty", "--decrypt"});
         process.getOutputStream().write(sb.toString().getBytes());
         process.getOutputStream().close();
 
