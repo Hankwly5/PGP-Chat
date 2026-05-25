@@ -3,23 +3,26 @@
 PGP-Chat encrypts chat messages with PGP.
 
 ## Usage
-
-You must have gpg installed on your system and in your PATH.
-It may be that gpg is in your PATH but this mod doesnt work\
-I have had an issue with Prism Launcher where gpg is removed from the PATH
-If you use Prism Launcher or another launcher and dont wan't to mess around, just run
+ 
+**Requirement:** GPG must be installed on your system.
+ 
+**Finding your GPG path:**
+ 
+Some launchers (e.g. Prism Launcher) strip GPG from the system PATH, which will prevent the mod from working. Run this to find your GPG executable:
+ 
 ```bash
 which gpg
 ```
-in a terminal and put the output in gpg-path in the config.
-
-When chatting prefix a message with
+ 
+If the mod isn't working, paste that output into the `gpg-path` field in the config. If it works without doing this, you can leave `gpg-path` blank.
+ 
+**Sending encrypted messages:**
+ 
+Prefix any chat message with `enc: ` to encrypt it before sending:
+ 
 ```
-enc: 
+enc: Hello, this is a secret message
 ```
-to send an
-encrypted message.
-You must have at least 1 recipient specified.
 
 ## Config
 
