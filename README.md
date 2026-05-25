@@ -5,7 +5,7 @@ PGP-Chat encrypts chat messages with PGP.
 ## Usage
 
 You must have gpg installed on your system and in your PATH.
-It may be that gpg is in your PATH but this mod doesnt work
+It may be that gpg is in your PATH but this mod doesnt work\
 I have had an issue where Prism Launcher where gpg is removed from the PATH
 If you use Prism Launcher or another launcher and dont wan't to mess around, just run
 ```bash
