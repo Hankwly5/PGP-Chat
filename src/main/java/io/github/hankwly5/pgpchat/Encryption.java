@@ -17,7 +17,8 @@ public class Encryption {
         if (recipients == null || recipients.isEmpty()) throw new IOException("No key configured");
 	
 	List<String> gpg_path = config.loadConfigKey("gpg-path");
-	if (gpg_path == null || recipients.isEmpty()) gpg_path.add("gpg");
+	if (gpg_path == null) gpg_path = new ArrayList<>();
+	if (gpg_path.isEmpty()) gpg_path.add("gpg");
 
         List<String> cmd = new ArrayList<>(List.of(gpg_path.get(0), "--encrypt", "--armor", "--batch"));
         for (String r : recipients) {
