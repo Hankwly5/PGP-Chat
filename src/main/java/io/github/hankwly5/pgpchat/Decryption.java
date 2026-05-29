@@ -42,7 +42,7 @@ public class Decryption {
         errThread.start();
         String decrypted = new String(process.getInputStream().readAllBytes());
         try { errThread.join(); } catch (InterruptedException e) { e.printStackTrace(); }
-        return sender + " " + decrypted;
+        return "\u26BF" + sender + " " + decrypted;
     } catch (IOException e) {
         e.printStackTrace();
     }
