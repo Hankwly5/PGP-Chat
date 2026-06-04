@@ -4,6 +4,7 @@ import java.util.List;
 import java.io.IOException;
 import java.util.ArrayList;
 import io.github.hankwly5.pgpchat.config.config;
+import io.github.hankwly5.pgpchat.GPG_Manager;
 
 public class Decryption {
     public static String decrypt(List<String> messages, String sender) {
@@ -28,7 +29,7 @@ public class Decryption {
     try {
 	List<String> gpg_path = config.loadConfigKey("gpg-path");
 	if (gpg_path == null) gpg_path = new ArrayList<>();
-	if (gpg_path.isEmpty()) gpg_path.add("gpg");
+	if (gpg_path.isEmpty()) gpg_path.add(GPG_Manager.GPG_Path());
         Process process = Runtime.getRuntime().exec(new String[]{gpg_path.get(0), "--no-tty", "--decrypt"});
         process.getOutputStream().write(sb.toString().getBytes());
         process.getOutputStream().close();
