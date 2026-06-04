@@ -21,7 +21,8 @@ The config is available in your instances config folder at PGP-Chat/config.txt
 By default it looks like this
 
 ```
-# The fingerprint, email, or key id of your message's recipient's pgp key (must be in gpg keyring), you can add more recipient: lines to add more recipients\nrecipient: 
+# The fingerprint, email, or key id of your message's recipient's pgp key (must be in gpg keyring), you can add more recipient: lines to add more recipients
+recipient: 
 # The path to gpg, you probably don't need to put anything here if your gpg is at a standard path
 gpg-path: 
 ```
