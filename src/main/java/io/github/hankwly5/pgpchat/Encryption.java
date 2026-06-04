@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import io.github.hankwly5.pgpchat.config.config;
+import io.github.hankwly5.pgpchat.GPG_Manager;
 
 public class Encryption {
 
@@ -18,7 +19,7 @@ public class Encryption {
 	
 	List<String> gpg_path = config.loadConfigKey("gpg-path");
 	if (gpg_path == null) gpg_path = new ArrayList<>();
-	if (gpg_path.isEmpty()) gpg_path.add("gpg");
+	if (gpg_path.isEmpty()) gpg_path.add(GPG_Manager.GPG_Path());
 
         List<String> cmd = new ArrayList<>(List.of(gpg_path.get(0), "--encrypt", "--armor", "--batch"));
         for (String r : recipients) {
