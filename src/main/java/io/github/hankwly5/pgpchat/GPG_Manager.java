@@ -10,9 +10,9 @@ public class GPG_Manager {
             "/usr/local/bin/gpg2",
             "/opt/homebrew/bin/gpg2",
             "C:/Program Files (x86)/GnuPG/bin/gpg.exe",
-			"/usr/bin/gpg",
-			"/usr/local/bin/gpg",
-			"/opt/homebrew/bin/gpg"
+            "/usr/bin/gpg",
+            "/usr/local/bin/gpg",
+            "/opt/homebrew/bin/gpg"
         };
 
         for (String path : possible_paths) {
