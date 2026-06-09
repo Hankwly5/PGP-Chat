@@ -1,7 +1,7 @@
 # PGP-Chat
 
-PGP-Chat encrypts chat messages with PGP.
-
+PGP-Chat encrypts chat messages with PGP.\
+<img src="https://cdn.modrinth.com/data/Opss0FQG/images/55a4e587d1b65575144ef7df189fef73b7136104.gif" width="500" alt="Mod demo">
 ## Usage
  
 **Requirement:** GPG must be installed on your system.
