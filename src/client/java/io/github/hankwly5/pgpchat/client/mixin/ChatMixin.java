@@ -4,6 +4,7 @@ import net.minecraft.client.multiplayer.ClientPacketListener;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.Hud;
 import net.minecraft.network.chat.Component;
 import io.github.hankwly5.pgpchat.Encryption;
 import java.io.IOException;
@@ -25,8 +26,8 @@ public class ChatMixin {
             ci.cancel(); // cancel the original message
             } catch (IOException e) {
             if (e.getMessage() != null && e.getMessage().equals("No key configured")) {
-                Minecraft.getInstance().gui.getChat()
-                    .addClientSystemMessage(Component.literal("PGP-Chat: No recipient key configured. Edit config/PGP-Chat/config.txt"));
+                Hud hud = ((GuiAccessor) Minecraft.getInstance().gui).getHud();
+                hud.getChat().addClientSystemMessage(Component.literal("PGP-Chat: No recipient key configured. Edit config/PGP-Chat/config.txt"));
             } else {
                 e.printStackTrace();
             }

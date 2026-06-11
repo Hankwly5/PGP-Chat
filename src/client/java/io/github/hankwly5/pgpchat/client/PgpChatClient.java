@@ -3,8 +3,11 @@ package io.github.hankwly5.pgpchat.client;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.message.v1.ClientReceiveMessageEvents;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.Hud;
 import net.minecraft.network.chat.Component;
 import io.github.hankwly5.pgpchat.Decryption;
+import io.github.hankwly5.pgpchat.client.mixin.GuiAccessor;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -32,8 +35,8 @@ public class PgpChatClient implements ClientModInitializer {
             if (part == total) {
                 String decrypted = Decryption.decrypt(messages, senderName);
                 messages.clear();
-                Minecraft.getInstance().gui.getChat()
-                    .addClientSystemMessage(Component.literal(decrypted));
+                Hud hud = ((GuiAccessor) Minecraft.getInstance().gui).getHud();
+                hud.getChat().addClientSystemMessage(Component.literal(decrypted));
             }
             return false;
         });
